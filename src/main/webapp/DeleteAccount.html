@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="HomePage.html">
+                    Manage Accounts
+                </a>
+            </li>
+            <li>
+                <a href="CreateAccount.html">Create Account</a>
+            </li>
+            <li>
+                <a href="UpdateAccount.html">Update Account</a>
+            </li>
+            <li>
+                <a href="DeleteAccount.html">Delete Account</a>
+            </li>
+            <li>
+                <a href="ListAllAccounts.html">List Existing Accounts</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1>Delete Account</h1>
+            <p> This page allows you to delete an existing account </p>
+            <br>
+            Enter id of Account To Delete: <input type="text" id="EnterId"/>  <input type="button" value="Submit" onclick="deleteRequest()"/><br>
+            <br>
+            </br><a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toolbar</a>
+        </div>
+        <script>
+            function deleteRequest() {
+
+                var a = document.getElementById("EnterId").value;
+                var requestURL = 'http://localhost:8080/account-app/api/account/json/'+a+'';
+                console.log(requestURL);
+                var get = new XMLHttpRequest();
+                get.open('DELETE', requestURL);
+                get.responseType ='json';
+                get.send();
+            }
+
+        </script>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+</body>
+
+</html>
