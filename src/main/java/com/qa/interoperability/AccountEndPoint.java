@@ -21,35 +21,35 @@ public class AccountEndPoint {
 	@GET
 	@Path("/json")
 	@Produces({ "application/json" })
-	public String getAllMovies() {
+	public String getAllAccounts() {
 		return service.getAllAccounts();
 	}
 
 	@GET
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String getMovies(@PathParam("id") Long id) {
+	public String getAccounts(@PathParam("id") Long id) {
 		return service.getAccount(id);
 	}
 
 	@POST
 	@Path("/json")
 	@Produces({ "application/json" })
-	public String createMovies(String jsonString) {
+	public String createAccount(String jsonString) {
 		return service.createAccount(jsonString);
 	}
 	
 	@DELETE
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String deleteMovies(@PathParam("id") Long id) {
+	public String deleteAccount(@PathParam("id") Long id) {
 		return service.deleteAccount(id);
 	}
 	
 	@PUT
 	@Path("/json/")
 	@Produces({ "application/json" })
-	public String updateMovies( String jsonString) {
+	public String updateAccount( String jsonString) {
 		return service.updateAccount(jsonString);
 	}
 }
