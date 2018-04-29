@@ -1,21 +1,8 @@
 package com.qa.service.repository;
 
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import com.qa.business.repository.AccountMapRepository;
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
