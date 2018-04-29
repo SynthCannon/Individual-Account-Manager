@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="HomePage.html">
+                    Manage Accounts
+                </a>
+            </li>
+            <li>
+                <a href="CreateAccount.html">Create Account</a>
+            </li>
+            <li>
+                <a href="UpdateAccount.html">Update Account</a>
+            </li>
+            <li>
+                <a href="DeleteAccount.html">Delete Account</a>
+            </li>
+            <li>
+                <a href="ListAllAccounts.html">List Existing Accounts</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1>Create Account</h1>
+            <p> This page allows you to create a new account </p>
+            <br>
+            Enter First Name: <input type="text" id="EnterFirstName"/>
+            <br>
+            <br>
+            Enter Second Name: <input type="text" id="EnterSecondName"/>
+            <br>
+            <br>
+            Enter Account Number: <input type="text" id="EnterAccountNumber"/>
+            <br><input type="button" value="Submit" onclick="postRequest()"/><br>
+            <br>
+            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toolbar</a>
+        </div>
+        <script>
+
+            function postRequest() {
+
+                var a = document.getElementById("EnterFirstName").value;
+                var b = document.getElementById("EnterSecondName").value;
+                var c = document.getElementById("EnterAccountNumber").value;
+                var post = new XMLHttpRequest();
+                var url = "http://localhost:8080/account-app/api/account/json/";
+                post.open("POST", url);
+                post.setRequestHeader("Content-Type", "application/json");
+                var data = JSON.stringify({"firstName": "" + a + "", "secondName": "" + b + "", "accountNumber": "" + c + ""});
+                post.send(data);
+
+            }
+
+        </script>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+</body>
+
+</html>
