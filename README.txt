@@ -12,6 +12,6 @@ Json: This is used because it is faster than using xml and is also easily loaded
 
 Map implementation: I implemented this so that the application can be used offline if needed.
 
-Http Request: The main reason I used jquery for my requests is that it is easy to use.
+Http Request: The main reason I used Http requests is because they are easier to use than angular JS or springboot.
 
 
