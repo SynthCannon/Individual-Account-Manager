@@ -10,4 +10,8 @@ Bootstrap: This is used as it allows for a professional presentation at the fron
 
 Json: This is used because it is faster than using xml and is also easily loaded in javascript.
 
+Map implementation: I implemented this so that the application can be used offline if needed.
+
+JQuery: The main reason I used jquery for my requests is that it is easy to use.
+
 
